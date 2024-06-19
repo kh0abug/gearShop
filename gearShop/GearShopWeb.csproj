@@ -1,0 +1,201 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>6c24057a-9dc2-495c-adb6-37cbaeedba70</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Customer\Controllers\ProductController.cs\**" />
+    <Content Remove="Areas\Customer\Controllers\ProductController.cs\**" />
+    <EmbeddedResource Remove="Areas\Customer\Controllers\ProductController.cs\**" />
+    <None Remove="Areas\Customer\Controllers\ProductController.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Areas\Admin\Views\Product\Index.cshtml~RF2037882.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\style" />
+    <None Include="wwwroot\assets\css\style.css.map" />
+    <None Include="wwwroot\assets\css\style.map" />
+    <None Include="wwwroot\assets\fonts\ElegantIcons.svg" />
+    <None Include="wwwroot\assets\fonts\ElegantIcons.woff2" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\fonts\icofont.svg" />
+    <None Include="wwwroot\assets\fonts\icofont.woff2" />
+    <None Include="wwwroot\assets\fonts\ionicons.svg" />
+    <None Include="wwwroot\assets\fonts\Simple-Line-Icons.svg" />
+    <None Include="wwwroot\assets\fonts\Simple-Line-Icons.woff2" />
+    <None Include="wwwroot\assets\img\banner-2.webp" />
+    <None Include="wwwroot\assets\js\ajax-mail.js" />
+    <None Include="wwwroot\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\custom.js" />
+    <None Include="wwwroot\assets\js\hc-offcanvas-nav.js" />
+    <None Include="wwwroot\assets\js\images-loaded.min.js" />
+    <None Include="wwwroot\assets\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\assets\js\jquery-ui.min.js" />
+    <None Include="wwwroot\assets\js\jquery-waypoints.js" />
+    <None Include="wwwroot\assets\js\jquery.counterup.min.js" />
+    <None Include="wwwroot\assets\js\jquery.instagramFeed.min.js" />
+    <None Include="wwwroot\assets\js\jquery.js" />
+    <None Include="wwwroot\assets\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\assets\js\jquery.nice-select.js" />
+    <None Include="wwwroot\assets\js\jquery.scrollup.min.js" />
+    <None Include="wwwroot\assets\js\mailchimp-ajax.js" />
+    <None Include="wwwroot\assets\js\main.js" />
+    <None Include="wwwroot\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\assets\js\popper.js" />
+    <None Include="wwwroot\assets\js\showMoreItems.min.js" />
+    <None Include="wwwroot\assets\js\slick.min.js" />
+    <None Include="wwwroot\assets\js\swiper-bundle.min.js" />
+    <None Include="wwwroot\assets\js\tiny-slider.js" />
+    <None Include="wwwroot\assets\js\tippy-bundle.umd.js" />
+    <None Include="wwwroot\assets\js\validation.js" />
+    <None Include="wwwroot\assets\js\vendor\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\vendor\jquery-3.4.1.min.js" />
+    <None Include="wwwroot\assets\js\vendor\modernizr-3.7.1.min.js" />
+    <None Include="wwwroot\assets\js\vendor\popper.js" />
+    <None Include="wwwroot\assets\js\vendor\vendor.min.js" />
+    <None Include="wwwroot\assets\js\wow.min.js" />
+    <None Include="wwwroot\assets\mail.php" />
+    <None Include="wwwroot\assets\scss\section\_about.scss" />
+    <None Include="wwwroot\assets\scss\section\_banner.scss" />
+    <None Include="wwwroot\assets\scss\section\_blog-details.scss" />
+    <None Include="wwwroot\assets\scss\section\_blog.scss" />
+    <None Include="wwwroot\assets\scss\section\_cart-page.scss" />
+    <None Include="wwwroot\assets\scss\section\_checkout.scss" />
+    <None Include="wwwroot\assets\scss\section\_contact.scss" />
+    <None Include="wwwroot\assets\scss\section\_footer.scss" />
+    <None Include="wwwroot\assets\scss\section\_header.scss" />
+    <None Include="wwwroot\assets\scss\section\_other.scss" />
+    <None Include="wwwroot\assets\scss\section\_product-details.scss" />
+    <None Include="wwwroot\assets\scss\section\_product.scss" />
+    <None Include="wwwroot\assets\scss\section\_quick-view.scss" />
+    <None Include="wwwroot\assets\scss\section\_shop.scss" />
+    <None Include="wwwroot\assets\scss\section\_slider.scss" />
+    <None Include="wwwroot\assets\scss\style.scss" />
+    <None Include="wwwroot\assets\scss\_common.scss" />
+    <None Include="wwwroot\assets\scss\_variabls.scss" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\test_assets\css\style" />
+    <None Include="wwwroot\test_assets\css\style.css.map" />
+    <None Include="wwwroot\test_assets\css\style.map" />
+    <None Include="wwwroot\test_assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\test_assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\test_assets\fonts\ionicons.svg" />
+    <None Include="wwwroot\test_assets\fonts\Simple-Line-Icons.svg" />
+    <None Include="wwwroot\test_assets\fonts\Simple-Line-Icons.woff2" />
+    <None Include="wwwroot\test_assets\js\images-loaded.min.js" />
+    <None Include="wwwroot\test_assets\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\test_assets\js\jquery-ui.min.js" />
+    <None Include="wwwroot\test_assets\js\jquery.instagramFeed.min.js" />
+    <None Include="wwwroot\test_assets\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\test_assets\js\jquery.nice-select.js" />
+    <None Include="wwwroot\test_assets\js\jquery.scrollup.min.js" />
+    <None Include="wwwroot\test_assets\js\mailchimp-ajax.js" />
+    <None Include="wwwroot\test_assets\js\main.js" />
+    <None Include="wwwroot\test_assets\js\slick.min.js" />
+    <None Include="wwwroot\test_assets\js\tippy-bundle.umd.js" />
+    <None Include="wwwroot\test_assets\js\vendor\bootstrap.min.js" />
+    <None Include="wwwroot\test_assets\js\vendor\jquery-3.4.1.min.js" />
+    <None Include="wwwroot\test_assets\js\vendor\modernizr-3.7.1.min.js" />
+    <None Include="wwwroot\test_assets\js\vendor\popper.js" />
+    <None Include="wwwroot\test_assets\js\vendor\vendor.min.js" />
+    <None Include="wwwroot\test_assets\js\wow.min.js" />
+    <None Include="wwwroot\test_assets\scss\section\_banner.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_blog-details.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_blog.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_cart-page.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_checkout.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_footer.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_header.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_other.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_product-details.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_product.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_quick-view.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_shop.scss" />
+    <None Include="wwwroot\test_assets\scss\section\_slider.scss" />
+    <None Include="wwwroot\test_assets\scss\style.scss" />
+    <None Include="wwwroot\test_assets\scss\_common.scss" />
+    <None Include="wwwroot\test_assets\scss\_variabls.scss" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
+		<PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.10" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="X.PagedList" Version="8.0.5" />
+		<PackageReference Include="X.PagedList.Mvc.Core" Version="8.0.5" />
+		<PackageReference Include="X.PagedList.Web.Common" Version="8.0.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Application\Application.csproj" />
+	  <ProjectReference Include="..\DataAccess\Infrastructure.csproj" />
+	  <ProjectReference Include="..\Models\Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\images\product\" />
+	</ItemGroup>
+
+	
+</Project>

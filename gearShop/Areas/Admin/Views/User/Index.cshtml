@@ -1,0 +1,48 @@
+﻿@model PaginatedList<User>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row py-3">
+            <div class="col-6">
+                <h5 class="card-title">Product List</h5>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="User" asp-action="CreateAndUpdate" class="btn btn-dark rounded-pill"
+                   style="margin-top:15px">
+                    <i class="bi bi-plus-circle"></i>  Create New Product
+                </a>
+            </div>
+        </div>
+
+        <table id="tblData" class="table" style="width:100%">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">User-Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Register Date</th>
+                    <th scope="col">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.UserName</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.RegisterDate</td>
+                        <td>@item.Role.RoleName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@*
+@section Scripts{
+    <script src="~/js/product.js"></script>
+}
+*@

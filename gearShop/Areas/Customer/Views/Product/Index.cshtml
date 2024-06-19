@@ -1,0 +1,104 @@
+﻿@model PaginatedList<HomeProductVM>
+@*     @model List<HomeProductVM> *@
+<div class="breadcrumbs_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content text-center">
+                    <h2>Shop</h2>
+                    <ul class="d-flex justify-content-center">
+                        <li><a href="index.html">Home</a></li>
+                        <li>></li>
+                        <li><a href="shop-left-sidebar.html">Product</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- shop page section satrt -->
+<div class="shop_page_section shop_fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="shop_fullwidth_inner">
+                    <div class="shop_top_bar d-flex justify-content-between">
+                        <div class="shop_product_count">
+                            <span>Show 9 / 12  / 18 / 24</span>
+                        </div>
+                        <div class="shop_top_right d-flex">
+                            <div class="product_sorting">
+                                <select>
+                                    <option selected value="1">Default Sorting</option>
+                                    <option value="1">Default Sorting2</option>
+                                    <option value="1">Default Sorting3</option>
+                                    <option value="1">Default Sorting3</option>
+                                </select>
+                            </div>
+                            <div class="shop_filter">
+                                @* <partial name="_FilterPartial"></partial> *@
+                                <select id="filter" name="filter">
+                                    @* @foreach (var x in Model.Items)
+                                    {
+                                        
+                                    } *@
+                                    <option disabled selected>
+                                    <a asp-action="Index" asp-route-CatID="">
+                                    --Select Category--
+                                    </a>
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop_gallery">
+                        <div class="row">
+                            @foreach (var item in Model.Items)
+                            {
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_product">
+                                        <figure>
+                                            <div class="product_thumb">
+                                                <a asp-action="Details" asp-route-id="@item.Id">
+                                                    <img src="@item.ImgUrl" alt="">
+                                                </a>
+                                                <div class="label_product">
+                                                    <span class="label_sale">Sale</span>
+                                                </div>
+                                            </div>
+                                            <figcaption class="product_content">
+                                                <h4>
+                                                    <a asp-action="Details" asp-route-id="@item.Id" style="white-space: nowrap;">
+                                                        @item.Name.Truncate(30)
+                                                    </a>
+                                                </h4>
+                                                <div class="price_box">
+                                                    <span class="old_price">@item.Price.ToString("c")</span>
+                                                    <span class="current_price">@item.Price.ToString("c")</span>
+                                                </div>
+                                                <div>
+                                                    <a class="btn btn-link w-100" href="/Customer/Cart/AddItem?productID=@item.Id&quantity=1&ctl=shop">
+                                                        <i class="bi bi-cart-plus"></i> Add To Cart
+                                                    </a>
+
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <ul class="pagination justify-content-center" id="pagination"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_CustomPaging" />
+  
+   
+}

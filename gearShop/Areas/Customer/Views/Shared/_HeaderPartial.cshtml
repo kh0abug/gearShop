@@ -1,0 +1,142 @@
+﻿@inject IHttpContextAccessor cont;
+
+<!--header area start-->
+<!--offcanvas menu area start-->
+<div class="body_overlay">
+</div>
+<div class="offcanvas_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="offcanvas_menu_wrapper">
+                    <div class="canvas_close">
+                        <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
+                    </div>
+                    <div id="menu" class="text-left ">
+                        <ul class="offcanvas_main_menu">
+                            <li class="menu-item-has-children active">
+                                <a asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a asp-controller="Product" asp-action="Index">Shop </a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a asp-controller="Home" asp-action="Blog">Blog</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--offcanvas menu area end-->
+
+<header class="header_section mb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="main_header d-flex justify-content-between align-items-center">
+                    <div class="header_logo">
+                        <a class="sticky_none" href="index.html"><img src="~/assets/img/logo/logo.png" alt=""></a>
+                    </div>
+                    <!--main menu start-->
+                    <div class="main_menu d-none d-lg-block">
+                        <nav>
+                            @{
+                                string user = cont.HttpContext.Session.GetString("User");
+                                string role = cont.HttpContext.Session.GetString("Admin");
+                                string id = cont.HttpContext.Session.GetString("ID");
+                                var cart = cont.HttpContext.Session.GetString("CartSession");
+                                var list = cart != null ? JsonSerializer.Deserialize<List<CartItem>>(cart) : new List<CartItem>();
+                            }
+                            <ul class="d-flex">
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="Product" asp-action="Index">Shop </a></li>
+                                <li><a asp-controller="Home" asp-action="Blog">Blog</a></li>
+                                <li><a asp-controller="Home" asp-action="ContactUs">Contact Us</a></li>
+                                @if (user != null)
+                                {
+                                    <li>
+                                        <a><p>Hello @user</p></a>
+                                    </li>
+                                }
+                            </ul>
+
+                        </nav>
+                    </div>
+                    <!--main menu end-->
+                    <div class="header__ridebar d-flex align-items-center">
+                        <div class="header_account">
+                            <ul class="d-flex">
+                                <li class="header_search_btn">
+                                    <a href="#">
+                                        <img src="~/assets/img/icon/search.png"
+                                             alt="">
+                                    </a>
+                                </li>
+                                <li class="shopping_cart">
+                                    <a href="#">
+                                        <img src="~/assets/img/icon/cart.png"
+                                             alt="">
+                                        <span class="badge text-dark info" id="count">@list.Count()</span>
+                                    </a>
+                                </li>
+                                <li class="account_link_menu">
+                                    <a href="#">
+                                        <img src="~/assets/img/icon/person.png"
+                                             alt="">
+                                    </a>
+                                    <ul class="dropdown_account_link">
+                                        <li>
+                                            @if (user == null)
+                                            {
+                                                <a asp-controller="Account" asp-action="Login" class="text-nowrap">
+                                                    <i class="bi bi-box-arrow-in-right"></i> Login
+                                                </a>
+                                                <br>
+                                                <a asp-controller="Account" asp-action="SignUp" class="text-nowrap">
+                                                    <i class="bi bi-sign-intersection-fill"></i> Sign-Up
+                                                </a>
+                                            }
+                                        </li>
+                                        <li>
+                                            @if (user != null)
+                                            {
+                                                <a asp-controller="Account" asp-action="Details" asp-route-id="@id" class="text-nowrap">
+                                                    <i class="bi bi-caret-right"></i> My Account
+                                                </a>
+                                                <a asp-controller="Cart" asp-action="Index" class="text-nowrap">
+                                                    <i class="bi bi-bag-check"></i> My Cart
+                                                </a>
+                                                <a asp-controller="Account" asp-action="MyOrder" class="text-nowrap">
+                                                    <i class="bi bi-bag-fill"></i> My Order
+                                                </a>
+                                                <a asp-controller="Account" asp-action="Logout" class="text-nowrap">
+                                                    <i class="bi bi-box-arrow-left"></i> Logout
+                                                </a>
+                                            }
+                                        </li>
+                                        <li>
+                                            @if (role == "Admin")
+                                            {
+                                                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="text-nowrap">
+                                                    <i class="bi bi-window-split"></i> Admin Page
+                                                </a>
+                                            }
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="canvas_open">
+                            <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,75 @@
+﻿<!--mini cart-->
+
+@{
+    var cartSession = cont.HttpContext.Session.GetString("CartSession");
+    var list = new List<CartItem>();
+    if (cartSession != null)
+    {
+        list = JsonSerializer.Deserialize<List<CartItem>>(cartSession);
+    }
+}
+@if(list.Any())
+{
+<div class="mini_cart">
+    <div class="cart_gallery">
+        <div class="cart_close">
+            <div class="cart_text">
+                <h3>cart</h3>
+            </div>
+            <div class="mini_cart_close">
+                    <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
+            </div>
+        </div>
+        @foreach (var item in list)
+        {
+            <div class="cart_item">
+                <div class="cart_img">
+                    <a href="#"><img src="@item.product.ImgUrl" alt=""></a>
+                </div>
+                <div class="cart_info">
+                    <a href="#">@item.product.Name.Truncate(20)</a>
+                    <p>@item.Quantity x <span> @item.product.Price.ToString("C") </span></p>
+                </div>
+                <div class="cart_remove">
+                    <a href="#"><i class="icon-close icons"></i></a>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="mini_cart_table">
+        <div class="cart_table_border">
+            @* <div class="cart_total">
+                <span>Sub total:</span>
+                <span class="price">$125.00</span>
+            </div> *@
+            <div class="cart_total mt-10">
+                <span>total:</span>
+                <span class="price">@list.Sum(x=>x.Quantity * x.product.Price).ToString("C")</span>
+            </div>
+        </div>
+    </div>
+    <div class="mini_cart_footer">
+        <div class="cart_button">
+            <a asp-controller="Cart" asp-action="Index" ><i class="fa fa-shopping-cart"></i> View cart</a>
+        </div>
+        <div class="cart_button">
+            <a href="#"><i class="fa fa-sign-in"></i> Checkout</a>
+        </div>
+    </div>
+    </div>
+}
+else
+{
+    <div class="mini_cart">
+        <div class="cart_gallery">
+            <div class="cart_close">
+                <div class="cart_text">
+                    <h3>Cart Empy</h3>
+                </div>
+                <div class="mini_cart_close">
+                    <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

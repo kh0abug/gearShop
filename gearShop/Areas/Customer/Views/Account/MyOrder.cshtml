@@ -1,0 +1,70 @@
+﻿@model List<Order>
+
+
+<div class="breadcrumbs_area breadcrumbs__bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content text-center">
+                    <h2>Order</h2>
+                    <ul class="d-flex justify-content-center">
+                        <li><a href="index.html">Home</a></li>
+                        <li>></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex bg-secondary pt-5">
+    <div class="card w-75 m-auto mb-5">
+        <div class="card-body">
+            <h2 class="card-title mb-2">My Order</h2>
+            <div class="row g-3">
+                <!-- Floating Labels Form -->
+                <!-- Your form elements go here -->
+                @if (Model != null && Model.Any())
+                {
+                    <table id="tblData" class="table" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product Image</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Unit Price</th>
+                                <th scope="col">Total Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model)
+                            {
+                                @foreach (var item in order.OrderDetails)
+                                {
+                                    <tr>
+                                        <td class="w-25">
+                                            <img src="@item.Product.ImgUrl" style="width:50%">
+                                        </td>
+                                        <td class="w-25">
+                                            @item.Product.Name
+                                        </td>
+                                        <td class="w-15">@item.UnitPrice.ToString("c")</td>
+                                        <td class="w-15">@item.TotalPrice.ToString("c")</td>
+                                        <td class="w-10">@item.Quantity</td>
+                                        <td class="w-15">@order.CreateDate.ToString("MM/dd/yyyy HH:mm")</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>Order details are not available.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿@model PaginatedList<Category>
+
+<nav class="d-flex justify-content-center">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active">Centered Position</li>
+    </ol>
+</nav>
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="row py-3">
+
+            <div class="col-6">
+
+                <h5 class="card-title">Category List</h5>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Category" asp-action="CreateAndUpdate"
+                   class="btn btn-dark rounded-pill"
+                   style="margin-top:15px">
+                    <i class="bi bi-plus-circle"></i>  Create New Category
+                </a>
+            </div>
+
+        </div>
+
+        <table id="tblData" class="table table-hover" style="width:100%">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th class="w-10"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>@item.Name</td>
+                        <td style="width:20%;">
+                            <div style="display:flex;justify-content:space-evenly">
+                                <a asp-action="CreateAndUpdate" asp-route-id="@item.Id" class="btn btn-success btn-sm">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <button value="@item.Id" class="delete-button btn btn-danger btn-sm">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <p>Page @Model.PageIndex / @Model.TotalPages</p>
+        <ul class="pagination" id="pagination"></ul>
+
+        <form hidden id="page-delete" method="post" asp-action="Delete">
+            <input id="current-id" name="id" />
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_CustomPaging" />
+}
+
+

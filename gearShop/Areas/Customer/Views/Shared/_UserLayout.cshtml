@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Gear Shop</title>
+    <meta name="description" content="Hutche Furniture eCommerce Template is a wonderful and elegant-looking website template that is the best choice for any type of online furniture store." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="canonical" href="Replace_with_your_PAGE_URL" />
+
+    <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-270x270.png" />
+
+    <partial name="_FirstCSSPartial"></partial>
+   
+</head>
+<body>
+
+    
+
+    <!-- ======= Header ======= -->
+    <partial name="_HeaderPartial"></partial>
+
+    <!--mini cart-->
+    <partial name="_MiniCartPartial"></partial>
+    
+    <!--mini cart end-->
+
+    <!-- page search box -->
+    <div class="page_search_box">
+        <div class="search_close">
+            <i class="ion-close-round"></i>
+        </div>
+        <form class="border-bottom" action="#">
+            <input class="border-0" placeholder="Search products..." type="text">
+            <button type="submit"><i class="icofont-search"></i></button>
+        </form>
+    </div>
+    <!--header area end-->
+
+    @RenderBody()
+
+    
+    <!-- ======= Footer ======= -->
+    <partial name="_FooterPartial"></partial>
+    
+    <partial name="_EndJSPartial"></partial>
+    @await Component.InvokeAsync("Notyf")
+    @await RenderSectionAsync("Scripts",required:false)
+
+    <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: inline;"><i class="ion-android-arrow-up"></i></a>
+</body>
+</html>
+

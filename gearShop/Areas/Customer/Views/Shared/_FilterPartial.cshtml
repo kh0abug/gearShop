@@ -1,0 +1,9 @@
+﻿@* @model HomeProductVM
+
+<select asp-items="@ViewBag.SelectList" id="filter" name="filter">
+    <option disabled selected>
+        <a asp-action="Index" asp-route-CatID="@Model.category.Id">
+            --Select Category--
+        </a>
+    </option>
+</select> *@

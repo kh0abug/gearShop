@@ -1,0 +1,84 @@
+﻿@model Product
+
+<div class="breadcrumbs_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content text-center">
+                    <h2>@Model.Name</h2>
+                    <ul class="d-flex justify-content-center">
+                        <li><a href="index.html">Home</a></li>
+                        <li>></li>
+                        <li><a href="single-product.html">single product</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- product gallery section start -->
+<div class="product_gallery_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+
+                <div class="product_gallery_list">
+                    <div class="product_gallery_thumb">
+                        <a href="#"><img src="@Model.ImgUrl" alt=""></a>
+                    </div>
+
+                </div>
+                <div class="product_social">
+                    <ul class="d-flex justify-content-center">
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-ios-email"></i></a></li>
+                        <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8" style="display: flex;">
+                <div class="col-lg-8 mx-lg-5">
+                    <div class="product_details_left">
+
+                        <div class="product_ratting_stock d-flex">
+                            <div class=" product_ratting">
+                                <ul class="d-flex">
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li class="review"><span>5  Reviews</span></li>
+                                </ul>
+                            </div>
+                            <div class="in_stock">
+                                <span><img src="assets/img/icon/check.png" alt=""> in Stock</span>
+                            </div>
+                        </div>
+                        <div class="product_details_title">
+                            <h3>@Model.Name</h3>
+                        </div>
+                        <div class="product_price_box">
+                            <span class="current_price">@Model.Price.ToString("c")</span>
+                        </div>
+                        <div class="product_desc">
+                            <p>@Model.Description</p>
+                        </div>
+                        <div class="product_variant_quantity d-flex align-items-center justify-content-center mt-2">
+                            <a class="btn btn-link w-50" style="margin-right:15px" href="/Customer/Cart/AddItem?productID=@Model.Id&quantity=1&ctl=detail">
+                                <i class="bi bi-cart-plus"></i> Add To Cart
+                            </a>
+                            <a class="btn btn-link w-50" href="/Customer/Cart/AddItem?productID=@Model.Id&quantity=1&ctl=detail">
+                                <i class="bi bi-cart4"></i> Buy Now
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- product gallery section end -->
