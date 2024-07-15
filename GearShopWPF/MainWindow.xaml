@@ -1,0 +1,60 @@
+﻿<Window x:Class="GearShopWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GearShopWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1200">
+    <Grid>
+        <DockPanel>
+            <!-- Header -->
+            <Grid DockPanel.Dock="Top" Height="40">
+                <Border Padding="10 0">
+                    <DockPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" Foreground="BlueViolet" FontSize="20" FontWeight="Medium">Gear Shop Management</TextBlock>
+                        </StackPanel>
+
+                    </DockPanel>
+                </Border>
+            </Grid>
+
+            <!-- Sidebar -->
+            <Grid DockPanel.Dock="Left" Width="200">
+                <TreeView Name="Menu" Background="Transparent" BorderThickness="0" Margin="10">
+                    <TreeView.ItemContainerStyle>
+                        <Style TargetType="TreeViewItem">
+                            <Setter Property="Foreground" Value="Blue"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="Margin" Value="0 5"/>
+                            <Setter Property="Padding" Value="5"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="LightGray"/>
+                                    <Setter Property="FontWeight" Value="DemiBold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TreeView.ItemContainerStyle>
+                    <TreeViewItem FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Header="Category Manager" MouseDoubleClick="Goto_AdminCategoryManager" Width="177"/>
+                    <TreeViewItem FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Header="Products Manager" MouseDoubleClick="Goto_AdminProductManager" Width="177"/>
+
+                </TreeView>
+            </Grid>
+
+            <!-- Content Area -->
+            <Grid>
+                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Margin="10">
+                    <Frame x:Name="frameAdmin" 
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch" 
+                  NavigationUIVisibility="Hidden" 
+                  HorizontalContentAlignment="Stretch" 
+                  VerticalContentAlignment="Stretch"/>
+                </Border>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

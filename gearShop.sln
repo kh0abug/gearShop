@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Models\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GearShopWeb", "GearShop\GearShopWeb.csproj", "{DBBD03C7-FF0D-48CE-A0F5-57DB3AFF0AA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GearShopWPF", "GearShopWPF\GearShopWPF.csproj", "{2E61EA98-62E8-4A5C-A4DA-746AD279C0B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DBBD03C7-FF0D-48CE-A0F5-57DB3AFF0AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBBD03C7-FF0D-48CE-A0F5-57DB3AFF0AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBBD03C7-FF0D-48CE-A0F5-57DB3AFF0AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E61EA98-62E8-4A5C-A4DA-746AD279C0B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E61EA98-62E8-4A5C-A4DA-746AD279C0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E61EA98-62E8-4A5C-A4DA-746AD279C0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E61EA98-62E8-4A5C-A4DA-746AD279C0B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
