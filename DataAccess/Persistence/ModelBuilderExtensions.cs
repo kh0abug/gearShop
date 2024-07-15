@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Persistence.Extensions
+namespace Infrastructure.Persistence
 {
     public static class ModelBuilderExtensions
     {

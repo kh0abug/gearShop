@@ -12,4 +12,9 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\DataAccess\Infrastructure.csproj" />
+	  <ProjectReference Include="..\Models\Domain.csproj" />
+	</ItemGroup>
+
 </Project>

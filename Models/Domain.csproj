@@ -10,10 +10,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj" />
-    <ProjectReference Include="..\DataAccess\Infrastructure.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="DataSet1.Designer.cs">

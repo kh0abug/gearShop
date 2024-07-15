@@ -15,10 +15,12 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\Application\Application.csproj" />
-	</ItemGroup>
+	
 	<ItemGroup>
 	  <Folder Include="Services\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\Models\Domain.csproj" />
 	</ItemGroup>
 </Project>
